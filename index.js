@@ -2,7 +2,7 @@ const httpServer = require("http").createServer();
 
 let messages = [
   {
-    colorCode: "aqua",
+    colorCode: "sienna",
     name: "cristobal",
     message: "hola",
   },
@@ -44,6 +44,6 @@ io.on("connection", function (socket) {
 
   socket.on("disconnect", (text) => {
     console.log("usuario desconectado");
-   socket.disconnect();
+    socket.disconnect();
   });
 });
