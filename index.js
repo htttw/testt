@@ -18,7 +18,6 @@ let io = require("socket.io")(server, {
     origin: "*",
   },
 });
-
 io.on("connection", function (socket) {
   console.log("usuario conectado", socket.id);
   countUsers = io.sockets.sockets.size;
