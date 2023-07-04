@@ -8,8 +8,6 @@ let messages = [
   },
 ];
 
-/* let countUser =0; */
-
 let server = httpServer.listen(process.env.PORT || 3001, () => {
   console.log("...");
 });
