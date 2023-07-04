@@ -7,7 +7,6 @@ let messages = [
     message: "hola",
   },
 ];
-
 let countUsers = 0;
 
 let server = httpServer.listen(process.env.PORT || 3001, () => {
