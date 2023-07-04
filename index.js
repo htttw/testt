@@ -2,11 +2,13 @@ const httpServer = require("http").createServer();
 
 let messages = [
   {
-    colorCode: "sienna",
+    colorCode: "aqua",
     name: "cristobal",
     message: "hola",
   },
 ];
+
+let countUsers = 0;
 
 let server = httpServer.listen(process.env.PORT || 3001, () => {
   console.log("...");
@@ -19,6 +21,8 @@ let io = require("socket.io")(server, {
 
 io.on("connection", function (socket) {
   console.log("usuario conectado", socket.id);
+  countUsers = io.sockets.sockets.size;
+  io.sockets.emit("updateNumConnections", countUsers);
 
   socket.emit("messagesUsers", messages);
 
